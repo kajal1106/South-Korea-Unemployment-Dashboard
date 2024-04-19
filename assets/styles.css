@@ -1,0 +1,64 @@
+@keyframes animatedgradient {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+@media only screen and (min-width: 768px) {
+  /* Adjustments for medium screens */
+  .animated-background {
+      animation-duration: 96s;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /* Adjustments for large screens */
+  .animated-background {
+      animation-duration: 145s;
+  }
+}
+
+@keyframes animatedgradientborder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.card {
+  background-color: white;
+  background-image: linear-gradient(216deg, hsla(33, 0%, 100%, 0.62), hsla(33, 0%, 100%, 1));
+  box-shadow: 0 3px 10px rgba(99, 118, 129, 0.3);
+  transition: box-shadow 0.25s cubic-bezier(0.32, 0.01, 0, 1);
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+  border-radius: 3px;
+  /* padding: 10px; */
+  /* margin: 10px; */
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -2px; /* This will be the border thickness */
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
+  z-index: -1; /* Sits right below the card content but above its background */
+  border-radius: inherit; /* Inherits the border-radius of the card */
+  background: linear-gradient(60deg, #000428, #3D51FF, #000428, #3D51FF);
+  background-size: 300% 300%;
+  animation: animatedgradientborder 6s linear infinite;
+}
+
+/* .card:hover {
+  transform: scale(1.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  opacity: 0.9;
+  border-radius: 5px !important;
+  &::before {  
+    content: unset;
+    background: color('white') !important;
+    color: #000428 !important;
+  }
+} */
