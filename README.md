@@ -71,7 +71,7 @@ To run this dashboard locally, you need Python and several libraries installed o
 
 1. **Start the Dash Server**
    ```bash
-   python app.py
+   python economic-dashboard.py
    ```
 
 2. **Access the Dashboard**
